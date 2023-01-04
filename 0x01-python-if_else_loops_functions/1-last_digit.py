@@ -11,9 +11,9 @@ if last_digit >= 10:
 last_digit = sign * last_digit
 print(f"Last digit of {number} is {last_digit}", end="")
 if last_digit > 5:
-    print(" and is greater than 5", end="")
+    print(" is greater than 5", end="")
 elif last_digit < 6:
     print(" and is less than 6", end="")
 if last_digit != 0:
-    print(" and not 0", end="")
+    print(" is not 0", end="")
 print()
