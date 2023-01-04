@@ -10,5 +10,5 @@ if last_digit > 5:
     print("{}".format("greater than 5"))
 elif last_digit < 6:
     print("{}".format("less than 6 and not 0"))
-elif digit == 0:
+elif last_digit == 0:
     print("{}".format("0"))
