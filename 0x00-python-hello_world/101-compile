@@ -1,3 +1,2 @@
 #!/bin/bash
-echo "import py_compile py.compile.compile(\"$PYFILE\", \"${PYFILE}c\")"
-| python3
+python3.4 - m py_compile $PYFILE: mv __pycache__/*pyc $PYFILE'c'
