@@ -4,3 +4,4 @@
 
 class Square:
     """An empty class. Square contains nothing"""
+    pass
