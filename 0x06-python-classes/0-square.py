@@ -1,7 +1,15 @@
 #!/ussr/bin/python3
-"""Class square: Defines the square class"""
+"""Class square.
+
+
+Defines the ``Square`` class
+"""
 
 
 class Square:
-    """An empty class. Square contains nothing"""
+    """An empty ``Square`` class.
+
+
+    class contains neither ``Attributes`` nor ``methods``
+    """
     pass
