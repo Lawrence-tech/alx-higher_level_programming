@@ -1,7 +1,5 @@
 #!/usr/bin/python3
 def square_matrix_simple(matrix=[]):
-    new_matrix = []
-    for i in matrix:
-        tmp_list = list(map(lampda x: x * x, i))
-        new_matrix.append(tmp_list)
-    return (new_matrix)
+    if matrix is None:
+        return None
+    return list(list(map(lampda x: x ** 2, y)) for y in matrix)
