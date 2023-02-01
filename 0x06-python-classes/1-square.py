@@ -1,18 +1,19 @@
 #!/usr/bin/python3
-Square = __import__('1-square').Square
+'''Square module definition.
+
+This module defines a simple `Square` class
+'''
 
 
-my_square = Square(3)
-print(type(my_square))
-print(my_square.__dict__)
+class Square:
+    """A simple ``Square`` class
 
-try:
-    print(my_square.size)
-except Exception as e:
-    print(e)
-
-
-try:
-    print(my_squire.__size)
-except Exception as e:
-    print(e)
+    Attributes:
+        size (`int`): The size of the ``Square``.
+   """
+    def __init__(self, size):
+        """Constructs a ``Square`` object
+        Args:
+            size (`int`): The size of the ``Square``.
+        """
+        self._Square__size = size
