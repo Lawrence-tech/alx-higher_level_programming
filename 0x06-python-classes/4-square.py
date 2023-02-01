@@ -42,9 +42,9 @@ class Square:
             size (`int`): The size of the ``Square``.
                 The default value is 0.
 
-    Raises:
-        TypeError: If ``size`` is not an integer.
-        ValueError: If ``size`` is 0
+        Raises:
+            TypeError: If ``size`` is not an integer.
+            ValueError: If ``size`` is 0
         '''
     return self._Square__size
 
