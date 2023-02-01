@@ -61,10 +61,8 @@ class Square:
 
     @property
     def position(self):
-        """
-        Args:
-            position: The position to print the ``Square``.
-        Raises:
+        """Getter method for position.
+        Returns:
             TypeError: If position is not a tuple of 2 integers.
         """
         return self._Square__position
