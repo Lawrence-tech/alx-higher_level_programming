@@ -65,10 +65,10 @@ class Square:
 
     @position.setter
     def position(self, value):
-        if not isinstance(position, tuple):
+        if not isinstance(value, tuple):
             raise TypeError("position must be a tuple of 2 positive integers")
         else:
-            self.Square__position = position
+            self.Square__position = value
 
     def my_print(self):
         """Prints a ``Square`` filled with '#'"""
