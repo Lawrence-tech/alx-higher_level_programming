@@ -11,7 +11,7 @@ class Square:
     Attributes:
         size (`int`): The size of the ``Square``.
     '''
-    def __init__(self, size=0):
+    def __init__(self, size=0, position=(0, 0)):
         '''Constructs a ``Square`` object
     Args:
         size (`int`): The size of the ``Square``.
@@ -27,6 +27,12 @@ class Square:
             raise ValueError("size must be >= 0")
         else:
             self._Square__size = size
+
+        if not isinstance(position, tuple) or len(position) != 2 or not all
+        (isinstance(i, int) and i >= 0 for i in position):
+            raise TypeError("position must be a tuple of 2 positive integers")
+        else:
+            self.Square__position = position
 
     def area(self):
         '''Computes the area of the ``Square``.
@@ -65,7 +71,8 @@ class Square:
 
     @position.setter
     def position(self, value):
-        if not isinstance(value, tuple):
+        if not isinstance(value, tuple) or len(value) != 2 or not all
+        (isinstance(i, int) and i >= 0 for i in value):
             raise TypeError("position must be a tuple of 2 positive integers")
         else:
             self.Square__position = value
