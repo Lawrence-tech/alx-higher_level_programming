@@ -1,4 +1,4 @@
-#!usr/bin/python3
+#!/usr/bin/python3
 '''Square module definition.
 
 This module defines a simple `Square` class
