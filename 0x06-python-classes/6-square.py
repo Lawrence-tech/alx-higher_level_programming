@@ -79,9 +79,9 @@ class Square:
         """Prints a ``Square`` filled with ' #'"""
         if self.size:
             for i in range(self.size):
-                print(" " * self.position[0], end="")
+                print("  " * self.position[0], end="")
                 for j in range(self.size):
-                    print(" #", end="")
+                    print("#", end="")
                 print()
         else:
             print()
