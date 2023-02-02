@@ -1,18 +1,18 @@
 #!/usr/bin/python3
-'''Square module definition.
+"""Square module definition.
 
 This module defines a simple `Square` class
-'''
+"""
 
 
 class Square:
-    '''A simple ``simple`` class
+    """A ``Square`` class
 
     Attributes:
         size (`int`): The size of the ``Square``.
-    '''
+    """
     def __init__(self, size=0, position=(0, 0)):
-        '''Constructs a ``Square`` object
+        """Constructs a ``Square`` object
     Args:
         size (`int`): The size of the ``Square``.
             The default value is 0.
@@ -20,13 +20,13 @@ class Square:
     Raises:
         TypeError: If ``size`` is not an integer.
         ValueError: If ``size`` is 0
-        '''
+        """
         if not isinstance(size, int):
             raise TypeError("size must be an integer")
         elif size < 0:
             raise ValueError("size must be >= 0")
         else:
-            self._Square__size = size
+            self._size = size
 
         if not isinstance(position, tuple) or len(position) != 2 or not all
         (isinstance(i, int) and i >= 0 for i in position):
@@ -39,7 +39,7 @@ class Square:
         Returns:
             int: The area of the ``Square``.
         '''
-        return self._Square__size ** 2
+        return self._size ** 2
 
     @property
     def size(self):
@@ -48,7 +48,7 @@ class Square:
         Returns:
             int: The size of the Square.
         """
-        return self._Square__size
+        return self._size
 
     @size.setter
     def size(self, size):
@@ -57,7 +57,7 @@ class Square:
         elif size < 0:
             raise ValueError("size must be >= 0")
         else:
-            self._Square__size = size
+            self._size = size
 
     @property
     def position(self):
@@ -65,7 +65,7 @@ class Square:
         Returns:
             TypeError: If position is not a tuple of 2 integers.
         """
-        return self._Square__position
+        return self._position
 
     @position.setter
     def position(self, value):
