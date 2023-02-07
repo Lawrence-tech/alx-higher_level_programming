@@ -5,7 +5,9 @@ Module BaseGeometry
 
 
 class BaseGeometry:
-    """ Add exception """
+    """
+    Base class for geometry objects
+    """
     def area(self):
-        """ raises an Exception with a message """
+        """ raises an Exception for the geometry class objects """
     raise Exception("area() is not implemented")
