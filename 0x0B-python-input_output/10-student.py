@@ -12,6 +12,13 @@ class Student:
 
     def to_json(self, attrs=None):
         """ retrieves a dictionary representation of a Student instance """
+        filterattr = 0
+        if type(attrs) == list:
+            filterattr = 1
+            for i in attrs:
+                if type(i) is not str:
+                    filterattr = 0
+                    break
         dic = {}
         if (type(attrs) is not list):
             return (self.__dict__)
