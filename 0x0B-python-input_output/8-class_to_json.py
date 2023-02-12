@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Defines a function that returns a class's serializable dict elements"""
+"""a function that returns a class's serializable dict elements"""
 
 
 def class_to_json(obj):
