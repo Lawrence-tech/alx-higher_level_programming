@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""defines a function that returns a list of lists with N sized pascal's """
+"""function that returns a list of lists with N sized pascal_triangle """
 
 
 def pascal_triangle(n):
