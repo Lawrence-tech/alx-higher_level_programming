@@ -20,7 +20,7 @@ class Student:
                     filterattr = 0
                     break
         dic = {}
-        if (type(attrs) is not list):
+        if (filterattr == 0 or attrs is None):
             return (self.__dict__)
         else:
             for i in attrs:
