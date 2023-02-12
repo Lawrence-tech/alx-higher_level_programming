@@ -14,12 +14,8 @@ class Student:
         """ retrieves a dictionary representation of a Student instance """
         if attrs is None:
             return self.__dict__
-
-        if not all(isinstance(i, str) for i in attrs):
-            return self.__dict__
-
         dic = {}
-        for i in attrs:
-            if (i in self.__dict__):
-                dic[i] = self.__dict__[i]
-                return (dic)
+        for attr in attrs:
+            if attr in self.__dict__:
+                dic[attr] = self.__dict__[attr]
+        return (dic)
