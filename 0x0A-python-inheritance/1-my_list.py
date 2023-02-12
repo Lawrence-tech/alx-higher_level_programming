@@ -5,9 +5,7 @@ Module that sorts a list int
 
 
 class Mylist(list):
-#"""
-#   Class that inherits from list
-#   """
+    """Mylist inherits from list"""
     def print_sorted(self):
         """prints the list, but sorted (ascending sort)"""
         new_list = self[:]
