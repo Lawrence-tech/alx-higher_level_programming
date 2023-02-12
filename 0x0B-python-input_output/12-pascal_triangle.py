@@ -1,4 +1,4 @@
-#!/usrbin/python3
+#!/usr/bin/python3
 """defines a function that returns a list of lists with N sized pascal's """
 
 
