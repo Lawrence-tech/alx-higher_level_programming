@@ -6,16 +6,13 @@ def pascal_triangle(n):
     """Returns a pascal's tringle os size n """
     triangle = []
     if n <= 0:
-        return []
-    n -= 1
-    for row in range(n + 1):
-        triangle.append([])
-        triangle[row].append(1)
-        for col in range(int(row / 2)):
-            triangle[row].append(triangle[row - 1][col] + triangle[row - 1]
-                                 [col + 1])
-            if row % 2 == 1:
-                triangle[ro].extend(triangle[row][::-1])
-            else:
-                triangle[row].extend(triangle[row][-2::-1])
         return triangle
+
+    for i in range(n)
+    row = [1] * (i + 1)
+    if i > 1:
+        for j in range(1, i):
+            row[j] = triangle[i-1][j-1] + triangle[i-1][j]
+        triangle.append(row)
+
+    return triangle
