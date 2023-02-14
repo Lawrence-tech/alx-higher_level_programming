@@ -2,7 +2,7 @@
 """
 First rectangle that inherits from Base
 """
-from . base import Base
+from models.base import Base
 import json
 
 
@@ -28,7 +28,7 @@ class Rectangle(Base):
             raise TypeError("width must be an integer")
         if (value <= 0):
             raise ValueError("width must be > 0")
-            self.Width = value
+            self.__width = value
 
     @property
     def height(self):
@@ -53,10 +53,10 @@ class Rectangle(Base):
     def x(self, value):
         """set private instance attribute x """
         if (type(value) is not int):
-            raise TypeError("x must be an integeer")
+            raise TypeError("x must be an integer")
         if (value < 0):
             raise ValueError("x must be  >= 0")
-            self.__x = value
+        self.__x = value
 
     @property
     def y(self):
@@ -70,7 +70,7 @@ class Rectangle(Base):
             raise TypeError("y must be an integer")
         if (value < 0):
             raise ValueError("y must be >= 0")
-            self.__y = value
+        self.__y = value
 
     def area(self):
         """Return the area value of the Rectangle instance """
