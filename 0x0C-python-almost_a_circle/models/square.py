@@ -2,7 +2,7 @@
 """
 Program that defines a Square in base from Rectangle
 """
-from . rectangle import Rectangle
+from models.rectangle import Rectangle
 
 
 class Square(Rectangle):
@@ -37,7 +37,7 @@ class Square(Rectangle):
                 if (arl == 0):
                     super().update(args[arl])
                 elif (arl < len(arlist)):
-                    setattr(self(self, arlist[arl], args[arl])
+                    setattr(self, arlist[arl], args[arl])
         else:
             for key, value in kwargs.items():
                 if (key == 'id'):
@@ -46,11 +46,10 @@ class Square(Rectangle):
                     setattr(self, key, value)
 
     def to_dictionary(self):
-    """returns the dictionary representation of a Square """
-        my_dict = {
+        """returns the dictionary representation of a Square """
+        return {
             'id': self.id,
             'size': self.size,
             'x': self.x,
             'y': self.y
             }
-        return (my_dict)
