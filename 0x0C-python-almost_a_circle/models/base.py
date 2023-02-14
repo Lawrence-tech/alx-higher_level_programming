@@ -5,9 +5,13 @@ Defines a base model class.
 import json
 import csv
 import os
+import turtle
 
 class Base:
-    """Represents the `base` class for all other classes in this project"""
+    """Represents the `base` class for all other classes in this project.
+    Attributes:
+        __nb_objects (int): The number of instantiated Bases.
+    """
     __nb_objects = 0
 
     def __init__(self, id=None):
