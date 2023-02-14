@@ -5,7 +5,6 @@ Defines a base model class.
 import json
 import csv
 import os
-import turtle
 
 class Base:
     """Represents the `base` class for all other classes in this project"""
