@@ -76,12 +76,12 @@ class Square:
             self._position = value
 
     def my_print(self):
-        """Prints a ``Square`` filled with ' # '"""
+        """Prints a ``Square`` filled with ' #'"""
         if self.size:
             for i in range(self.size):
                 print("  " * self.position[0], end="")
                 for j in range(self.size):
-                    print("#", end="")
+                    print(" #", end="")
                 print()
         else:
             print()
