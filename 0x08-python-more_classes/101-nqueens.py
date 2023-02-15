@@ -13,7 +13,7 @@ except (ValueError, TypeError):
     print("N must be a number")
     sys.exit(1)
 
-if size <= 4:
+if size < 4:
     print("N must be at least 4")
     sys.exit(1)
 
@@ -40,11 +40,10 @@ def queencalc(queen):
             if x == qx or x + queen == qx + y or x - queen == qx - y:
                 nextx = 1
                 break
-            if nextx == 1:
-                nextx = 0
-                continue
-            queens[queen] = x
-            queencalc(queen + 1)
+        if nextx == 1:
+            continue
+        queens[queen] = x
+        queencalc(queen + 1)
 
 
 queencalc(0)
