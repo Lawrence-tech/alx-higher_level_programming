@@ -53,6 +53,8 @@ class Square:
     def position(self):
         """Getter method for position.
         Returns:
+            tuple: the position of the Square as a tuple of 2 integers.
+        Raises:
             TypeError: If position is not a tuple of 2 integers.
         """
         return self._position
