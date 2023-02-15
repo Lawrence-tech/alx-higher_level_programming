@@ -3,29 +3,28 @@
 
 
 class Square:
-    """A ``Square`` class
-
+    """A Square class.
     Attributes:
-        size (`int`): The size of the ``Square``.
+        size (int): The size of the Square.
     """
     def __init__(self, size=0, position=(0, 0)):
-        """Constructs a ``Square`` object
+        """Constructs a Square object
     Args:
-        size (`int`): The size of the ``Square``.
+        size (int): The size of the Square.
             The default value is 0.
 
     Raises:
-        TypeError: If ``size`` is not an integer.
-        ValueError: If ``size`` is 0
+        TypeError: If size is not an integer.
+        ValueError: If size is 0
         """
         self.size = size
         self._position = position
 
     def area(self):
-        '''Computes the area of the ``Square``.
+        """Computes the area of the Square.
         Returns:
-            int: The area of the ``Square``.
-        '''
+            int: The area of the Square.
+        """
         return self._size ** 2
 
     @property
