@@ -3,6 +3,7 @@
 
 
 class Node:
+    """Node of a singly linked list"""
     def __init__(self, data, next_node=None):
         self.data = data
         self.next_node = next_node
@@ -29,6 +30,7 @@ class Node:
 
 
 class SinglyLinkedList:
+    """SLL head and functions"""
     def __init__(self):
         self.head = None
 
