@@ -71,7 +71,7 @@ class Rectangle:
         if Rectangle.number_of_instances != 0:
             Rectangle.number_of_instances -= 1
 
-    def bigger_or_equal(rect1, rect_2):
+    def bigger_or_equal(rect_1, rect_2):
         """Returns the greater of rect1 and rect2, rect1 if equal"""
         if type(rect_1) is not Rectangle:
             raise TypeError("rect_1 must be an instance of Rectangle")
