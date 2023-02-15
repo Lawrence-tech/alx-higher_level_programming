@@ -32,7 +32,7 @@ def nqueens(size):
                 if nextx == 1:
                     nextx == 0
                     continue
-                if queen != size -1:
+                if queen != size - 1:
                     queens[queen + 1] = 0
                     queens[queen] = x
                     queencalc(queen + 1)
