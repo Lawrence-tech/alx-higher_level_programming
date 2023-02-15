@@ -3,21 +3,28 @@
 import sys
 
 
-def nqueens(size):
-    """initial setup before recursive call"""
-    if type(size) is not int:
-        print("N must be a number")
-        return
-    if size < 4:
-        print("N must be at least 4")
-        return
-    queens = [0] * size
+if len(sys.argv) < 2:
+    print("Usage: nqueens N")
+    sys.exit(1)
 
-    def printsolution(queens):
-        print("[[0, ", queens[0], "]", sep="", end="")
-        for y, x in enumerate(queens[1:], 1):
-            print(", [", y, ", ", x, "]", sep="", end="")
-        print("]")
+try:
+    size = int(sys.argv[1])
+except (ValueError, TypeError):
+    print("N must be a number")
+    sys.exit(1)
+
+if size < 4:
+    print("N must be at least 4")
+    sys.exit(1)
+
+queens = [0] * size
+
+
+def printsolution(queens):
+    print("[[0, ", queens[0], "]", sep="", end="")
+    for y, x in enumerate(queens[1:], 1):
+        print(", [", y, ", ", x, "]", sep="", end="")
+    print("]")
 
     def queencalc(queen):
         """Recursive call queen position validator"""
@@ -38,12 +45,4 @@ def nqueens(size):
                 queens[queen] = x
                 queencalc(queen + 1)
 
-    if len(sys.argv) != 2:
-        print("Usage: nqueens N")
-        exit()
-    try:
-        size = int(sys.argv[1])
-    except (ValueError, TypeError):
-        print("N must be a number")
-        exit()
     queencalc(0)
