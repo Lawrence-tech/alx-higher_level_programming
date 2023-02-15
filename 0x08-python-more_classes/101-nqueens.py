@@ -26,23 +26,25 @@ def printsolution(queens):
         print(", [", y, ", ", x, "]", sep="", end="")
     print("]")
 
-    def queencalc(queen):
-        """Recursive call queen position validator"""
-        if queen == size:
-            printsolution(queens)
-            return
-        for x in range(size):
-            """horizontal board positions per queen"""
-            nextx = 0
-            for y in range(queen):
-                qx = queens[y]
-                if x == qx or x + queen == qx + y or x - queen == qx - y:
-                    nextx = 1
-                    break
-                if nextx == 1:
-                    nextx = 0
-                    continue
-                queens[queen] = x
-                queencalc(queen + 1)
 
-    queencalc(0)
+def queencalc(queen):
+    """Recursive call queen position validator"""
+    if queen == size:
+        printsolution(queens)
+        return
+    for x in range(size):
+        """horizontal board positions per queen"""
+        nextx = 0
+        for y in range(queen):
+            qx = queens[y]
+            if x == qx or x + queen == qx + y or x - queen == qx - y:
+                nextx = 1
+                break
+            if nextx == 1:
+                nextx = 0
+                continue
+            queens[queen] = x
+            queencalc(queen + 1)
+
+
+queencalc(0)
