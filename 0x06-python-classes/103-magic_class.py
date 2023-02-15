@@ -1,6 +1,6 @@
 #!/usr/bin/python3
+"""Circle Math"""
 import math
-""" Circle Math"""
 
 
 class MagicClass:
