@@ -5,7 +5,7 @@ import sys
 
 def nqueens(size):
     """initial setup before recursive call"""
-    if type(size) is not nt:
+    if type(size) is not int:
         print("N must be a number")
         return
     if size < 4:
@@ -21,6 +21,9 @@ def nqueens(size):
 
     def queencalc(queen):
         """Recursive call queen position validator"""
+        if queen == size:
+            printsolution(queens)
+            return
         for x in range(size):
             """horizontal board positions per queen"""
             nextx = 0
@@ -30,16 +33,10 @@ def nqueens(size):
                     nextx = 1
                     break
                 if nextx == 1:
-                    nextx == 0
+                    nextx = 0
                     continue
-                if queen != size - 1:
-                    queens[queen + 1] = 0
-                    queens[queen] = x
-                    queencalc(queen + 1)
-                else:
-                    queens[queen] = x
-                    printsolution(queens)
-        queencalc(0)
+                queens[queen] = x
+                queencalc(queen + 1)
 
     if len(sys.argv) != 2:
         print("Usage: nqueens N")
@@ -49,4 +46,4 @@ def nqueens(size):
     except (ValueError, TypeError):
         print("N must be a number")
         exit()
-    nqueens(size)
+    queencalc(0)
