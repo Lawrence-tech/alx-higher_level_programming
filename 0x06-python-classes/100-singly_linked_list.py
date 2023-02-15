@@ -53,9 +53,12 @@ class SinglyLinkedList:
         current.next_node = new_node
 
     def __str__(self):
+        """Returns the singly linked list as a string"""
+        if self.head is None:
+            return ""
         node = self.head
-        node = []
-        while node is not None:
-            nodes.append(str(node.data))
+        nodes = [str(node.data)]
+        while node.next_node:
             node = node.next_node
+            nodes.append(str(node.data))
         return "\n".join(nodes)
