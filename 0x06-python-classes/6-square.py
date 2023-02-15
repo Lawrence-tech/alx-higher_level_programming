@@ -78,8 +78,10 @@ class Square:
     def my_print(self):
         """Prints a ``Square`` filled with ' #'"""
         if self.size:
+            for i in range(self.position[1]):
+                print()
             for i in range(self.size):
-                print("  " * self.position[0], end="")
+                print(" " * self.position[0], end="")
                 for j in range(self.size):
                     print("#", end="")
                 print()
