@@ -1,13 +1,8 @@
 #!/usr/bin/python3
-"""
-Module that sorts a list int
-"""
+"""Defined a list class with member function that prints a sorted list"""
 
 
-class Mylist(list):
-    """Mylist which inherits from list"""
+class MyList(list):
     def print_sorted(self):
-        """prints the list, but sorted (ascending sort)"""
-        new_list = self[:]
-        new_list.sort()
-        print(new_list)
+        """Prints MyList, sorted"""
+        print(sorted(self))
