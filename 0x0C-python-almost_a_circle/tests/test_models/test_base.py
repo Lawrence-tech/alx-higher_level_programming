@@ -1,50 +1,93 @@
 #!/usr/bin/python3
-""" Unittest for base.py """
+"""Unittest for Base class
+Unittest classes:
+    testBase_instantiation
+"""
 import unittest
 from models.base import Base
 
 
-class TestBase(unittest.TestCase):
-    """ testcase is created by subclassing unittest.TestCase """
+class Test_Base_instantiation(unittest.TestCase):
+    """class tests the constructor method"""
+
+    def test_init_assigns_id(self):
+        b1 = Base()
+        self.assertEqual(b1.id, b1.id)
+
+    def test_init_assigns_unique_id(self):
+        b1 = Base()
+        b2 = Base()
+        self.assertEqual(b1.id, b2.id - 1)
+
+    def test_three_bases_id_assigns(self):
+        b1 = Base()
+        b2 = Base()
+        b3 = Base()
+        self.assertEqual(b1.id, b3.id - 2)
+
+    def test_init_assigns_given_id(self):
+        b1 = Base(9)
+        self.assertEqual(b1.id, 9)
+
+    def test_after_unique_id(self):
+        b1 = Base()
+        b2 = Base(9)
+        b3 = Base()
+        self.assertEqual(b1.id, b3.id - 1)
+
+
+class Test_Base_to_json_string(unittest.TestCase):
+    """testing the Base.to_json_string instances"""
+
     def setUp(self):
-        """ Prepare the test fixture - Assign private class attribute """
-        Base._Base__nb_objects = 0
+        Base._Base_nb_objects = 0
 
-    def test_create_instance_id_int(self):
-        """ Testing id property with int type """
-        tbase = Base(10)
-        self.assertEqual(tbase.id, 10)
+    def test_to_json_string(self):
+        # Test with an empty string
+        self.assertEqual(Base.to_json_string([]), "[]")
 
-    def test_create_instance_id_int_neg(self):
-        """ testing id property with negative int type """
-        tbase = Base(-10)
-        self.assertEqual(tbase.id, -10)
+        #test with None
+        self.assertEqual(Base.to_json_string(None), "[]")
 
-    def test_create_instance_id_float(self):
-        """testing id property with float type """
-        tbase = Base(2.15)
-        self.assertEqual(tbase.id, 2.15)
+        #test with a list of dictionaries
+        list_dicts = [{"id": 1}, {"id": 2}]
+        expected = '[{"id": 1}, {"id": 2}]'
+        self.assertEqual(Base.to_json_string(list_dicts), expected)
 
-    def test_create_instance_id_empty(self):
-        """ testing id property withouth attribute """
-        tbase = Base()
-        self.assertEqual(tbase.id, 1)
+    """def test_save_to_file(self):
+        """'Testing save_to_file'"""
+        #testing with an empty list
+        Base.save_to_file([])
+        with open("Base.json", "r") as f:
+            self.assertEqual(f.read(), "[]")
+        #testing with a list of instances
+        b1 = Base()
+        b2 = Base()
+        b3 = Base()
+        list_instances = [b1, b2, b3]
+        Base.save_to_file(list_instances)
+        with open("Base.json", "r") as f:
+            expected = '[{"id": 1}, {"id": 2}, {"id": 3}]'
+            self.assertEqual(f.read(), expected)
+        #testing with None
+        Base.save_to_file(None)
+        with open("Base.json", "r") as f:
+            self.assertEqual(f.read(), "[]")"""
 
-    def test_create_instance_id_None(self):
-        """ testing id property with None type """
-        tbase = Base(None)
-        self.assertEqual(tbase.id, 1)
+    def test_from_json_string(self):
+        """testing from_json_string instance"""
 
-    def test_create_instance_id_moreargs(self):
-        """ testing id property with more than one argument """
-        with self.assertRaises(TypeError):
-            tbase = Base(6, 3)
+        # testing with empty string
+        self.assertEqual(Base.from_json_string(""), [])
 
-    def test_check_private_attribute(self):
-        """ checking private attribute __nb_objects """
-        tbase = Base()
-        with self.assertRaises(AttributeError):
-            tbase.__nb_objects
+        #testing with valid JSON string
+        json_string = '[{"id": 1}, {"id": 2}]'
+        expected = [{"id": 1}, {"id": 2}]
+        self.assertEqual(Base.from_json_string(json_string), expected)
+        
+        #testing with None
 
-if __name__ == '__main__':
-    unittest.main()
+        self.assertEqual(Base.from_json_string(None), [])
+
+    if __name__ == "__main__":
+        unittest.main()
