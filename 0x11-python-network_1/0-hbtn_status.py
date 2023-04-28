@@ -27,4 +27,4 @@ with urllib.request.urlopen(req) as response:
 print("Body response:")
 print("\t- type: {}".format(type(body)))
 print("\t- content: {}".format(body))
-print('\t- utf8 content: {}'.format(html.decode('utf8')))
+print('\t- utf8 content: {}'.format(body))
