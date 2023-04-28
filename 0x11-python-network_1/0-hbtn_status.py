@@ -18,7 +18,7 @@ with urllib.request.urlopen(req) as response:
     if content_type == 'text/html; charset=utf-8':
         body = body.decode('utf-8')
     elif content_type == 'application/json':
-        body = body.decode('json')
+       body = body.decode('json')
     else:
         # Use a default encoding if not specified
         body = body.decode()
@@ -27,4 +27,4 @@ with urllib.request.urlopen(req) as response:
 print("Body response:")
 print("\t- type: {}".format(type(body)))
 print("\t- content: {}".format(body))
-print('\t- utf8 content: {}'.format(body))
+print("\t- utf8 content: {}".format(body))
