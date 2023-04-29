@@ -7,16 +7,18 @@ the value of the X-Request-Id variable found in the header of the response.
 import urllib.request
 from sys import argv
 
-# Get the URL from the command line argument
-url = argv[1]
 
-# Create a Request object with the URL
-req = urllib.request.Request(url)
+def main(argv):
+    """
+    Method that takes in a URL, sends a request to the URL
+    and displays the value of the X-Request-Id variable
+    found in the header of the response
+    """
+    url = argv
+    with urllib.request.urlopen(url) as response:
+        header = response.info()
+        print(header['X-Request-Id'])
 
-# Open the URL and read the response
-with urllib.request.urlopen(req) as response:
-    # Get the value of the X-Request-Id header
-    x_request_id = response.info()
 
-# Display the value of the X-Request-Id header
-print(x_request_id['X-Request-Id'])
+if __name__ == "__main__":
+    main(argv[1])
