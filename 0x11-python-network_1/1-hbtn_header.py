@@ -5,10 +5,10 @@ the value of the X-Request-Id variable found in the header of the response.
 """
 # First import the urllib.request and sys modules
 import urllib.request
-import sys
+from sys import argv
 
 # Get the URL from the command line argument
-url = sys.argv[1]
+url = argv[1]
 
 # Create a Request object with the URL
 req = urllib.request.Request(url)
@@ -16,7 +16,7 @@ req = urllib.request.Request(url)
 # Open the URL and read the response
 with urllib.request.urlopen(req) as response:
     # Get the value of the X-Request-Id header
-    x_request_id = response.getheader('X-Request-Id')
+    x_request_id = response.info()
 
 # Display the value of the X-Request-Id header
-print(x_request_id)
+print(x_request_id['X-Request-Id'])
