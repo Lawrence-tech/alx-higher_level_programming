@@ -19,10 +19,10 @@ def main(argv):
     password = argv[2]
     response = requests.get('https://api.github.com/user',
                             auth=HTTPBasicAuth('Lawrence-tech',
-                                               'github_pat_11AXVGSRA0aP2uIsQmGO'
-                                               'Wj_5YoMSYDkd0Z9779BSQGsIbjkHtUf'
-                                               'emtC9IRwiGF4EBw5HTC5RPD404QPXd'
-                                               'r'))
+                                               'github_pat_11AXVGSRA0aP2uIsQmG'
+                                               'OWj_5YoMSYDkd0Z9779BSQGsIbjkHt'
+                                               'UfemtC9IRwiGF4EBw5HTC5RPD404'
+                                               'QPXdr'))
     try:
         profile_info = response.json()
         print(profile_info['id'])
