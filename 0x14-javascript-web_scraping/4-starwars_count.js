@@ -16,9 +16,9 @@ request(apiUrl, (error, response, body) => {
   } else {
     const films = JSON.parse(body).results;
     // Filter the films where "Wedge Antilles" character is present
-    const filteredFilms = films.filter((film) =>
-      film.characters.includes(`https://swapi-api.alx-tools.com/api/people/${characterId}/`)
-    );
+    const filteredFilms = films.filter((film) => {
+      return film.characters.includes(`https://swapi-api.alx-tools.com/api/people/${characterId}/`);
+    });
     // Print the number of filtered films
     console.log(filteredFilms.length);
   }
